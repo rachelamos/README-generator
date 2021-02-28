@@ -105,19 +105,3 @@ const init = () => {
 };
 
 init();
-
-    //     const filename = `${answers.nametoLowerCase().split(' ').join('')}.json`;
-
-    //     fs.writeFile(filename, JSON.stringify(answers, null, '\t'), (err)
-    //     =>
-    //         err ? console.log(err) : console.log('Success!')
-    //     );
-    // });
-    // .catch(error => {
-    //     if(error.isTtyError) {
-    //         else{
-
-    //         }
-    //     }
-    // });
-
