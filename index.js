@@ -76,26 +76,26 @@ const readmeFile = (answers) =>
 ${answers.description}
 
 ### Installation Instructions
-${installation}
+${answers.installation}
 
 ### Usage
-${usage}
+${answers.usage}
 
 ### Contributers
-${contribution}
+${answers.contribution}
 
 ### Test
-${test}
+${answers.test}
 
 ### Questions
 If you have any other questions, you can reach me:
-- via email: ${email}
-- via GitHub: github.com/${github}
+- via email: ${answers.email}
+- via GitHub: github.com/${answers.github}
 
 ### License & Copyright
-This project is covered under the [${license}](LICENSE).
+This project is covered under the [${answers.license}](LICENSE).
 
-© ${contribution}`;
+© ${answers.contribution}`;
 
 const init = () => {
     questions ()
