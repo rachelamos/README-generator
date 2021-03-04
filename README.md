@@ -9,19 +9,19 @@
 5. [Tests](#test)
     
 ### Description
-An app that uses user inputs to generate a professional readme file.
+a profesh readme generator
 
 ### Installation Instructions
-npm init -y, npm i inquirer
+npm init i, npm
 
 ### Usage
-Within terminal, enter node index.js, then answer the prompts.
+within the terminal
 
 ### Contributers
-Rachel Amos
+Me
 
 ### Test
-123
+n/a
 
 ### Questions
 If you have any other questions, you can reach me:
@@ -31,4 +31,4 @@ If you have any other questions, you can reach me:
 ### License & Copyright
 This project is covered under the [MIT](LICENSE).
 
-© Rachel Amos
+© Me

@@ -1,46 +1,55 @@
+// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require('util');
+const markdown = require("./generateMarkdown.js");
+// const util = require('util');
 
-// Command line questions to generate README
-const writeFileAsync = util.promisify(fs.writeFile);
+// TODO: Create an array of questions for user input
+const questions = ['What is the title of your project?', 'Write a description of your project.', 'Provide installation instructions.', 'How do you use your project?', 'Who contributed to your project?', 'Run tests here.', 'Choose a license for your project', 'Enter your GitHub Username', 'Enter your email address.']
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.error(err) : console.log('Success! Your README file is all set.'));
+}
 
-const questions = () => {
-    return inquirer.prompt([
+// TODO: Create a function to initialize app
+function init() {
+
+    inquirer.prompt([
         {   // Project Title
             type: 'input',
             name: 'title',
-            message: 'What is the title of your project?',
+            message: questions[0],
         },
         {   // Project Description
             type: 'input',
             name: 'description',
-            message: 'Write a description of your project.',
+            message: questions[1],
         },
         {   // Installation Instructions
             type: 'input',
             name: 'installation',
-            message: 'Provide installation instructions.',
+            message: questions[2],
         },
         {   // Usage
             type: 'input',
             name: 'usage',
-            message: 'How do you use your project?',
+            message: questions[3],
         },
         {   // Contributors
             type: 'input',
             name: 'contribution',
-            message: 'Who contributed to your project?',
+            message: questions[4],
         },
         {   // Tests
             type: 'input',
             name: 'test',
-            message: 'Run tests here.',
+            message: questions[5],
         },
         {   // License
             type: 'checkbox',
             name: 'license',
-            message: 'Choose a license for your project',
+            message: questions[6],
             choices: ['MIT', 'GNU GPLv3', 'Babel'],
         },
         // {   // Badge
@@ -51,57 +60,65 @@ const questions = () => {
         {   // GitHub Username
             type: 'input',
             name: 'github',
-            message: 'Enter your GitHub Username',
+            message: questions[7],
         },
         {   // Email Address
             type: 'input',
             name: 'email',
-            message: 'Enter your email address.',
+            message: questions[9],
         },
     ])
+    .then((data) => {
+        let getBadge = markdown.renderLicenseBadge(data.license);
+        let markdownInputs = markdown.generateMarkdown(data);
+
+        writeToFile("README.md", markdownInputs)
+    })
 };
 
-const readmeFile = (answers) =>
-`# ${answers.title}
+// const readmeFile = (answers) =>
+// `# ${answers.title}
 
-## Table of Contents
+// ## Table of Contents
 
-1. [Description](#description)
-2. [Installation](#installation-instructions)
-3. [Usage](#usage)
-4. [Contributing](#contributers)
-5. [Tests](#test)
+// 1. [Description](#description)
+// 2. [Installation](#installation-instructions)
+// 3. [Usage](#usage)
+// 4. [Contributing](#contributers)
+// 5. [Tests](#test)
     
-### Description
-${answers.description}
+// ### Description
+// ${answers.description}
 
-### Installation Instructions
-${answers.installation}
+// ### Installation Instructions
+// ${answers.installation}
 
-### Usage
-${answers.usage}
+// ### Usage
+// ${answers.usage}
 
-### Contributers
-${answers.contribution}
+// ### Contributers
+// ${answers.contribution}
 
-### Test
-${answers.test}
+// ### Test
+// ${answers.test}
 
-### Questions
-If you have any other questions, you can reach me:
-- via email: ${answers.email}
-- via GitHub: github.com/${answers.github}
+// ### Questions
+// If you have any other questions, you can reach me:
+// - via email: ${answers.email}
+// - via GitHub: github.com/${answers.github}
 
-### License & Copyright
-This project is covered under the [${answers.license}](LICENSE).
+// ### License & Copyright
+// This project is covered under the [${answers.license}](LICENSE).
 
-© ${answers.contribution}`;
+// © ${answers.contribution}`;
 
-const init = () => {
-    questions ()
-        .then((answers) => writeFileAsync('README.md', readmeFile(answers)))
-        .then(() => console.log('Success! Your README file is all set.'))
-        .catch((err) => console.error(err));
-};
+// const init = () => {
+//     questions ()
+//         .then((answers) => writeFileAsync('README.md', readmeFile(answers)))
+//         .then(() => console.log('Success! Your README file is all set.'))
+//         .catch((err) => console.error(err));
+// };
+// }
 
+// Function call to initialize app
 init();
