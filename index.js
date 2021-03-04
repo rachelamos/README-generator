@@ -50,13 +50,8 @@ function init() {
             type: 'checkbox',
             name: 'license',
             message: questions[6],
-            choices: ['MIT', 'GNU GPLv3', 'Babel'],
+            choices: ['MIT', 'GNU GPLv3', 'Mozilla'],
         },
-        // {   // Badge
-        //     type: 'input',
-        //     name: 'badge',
-        //     message: ''
-        // },
         {   // GitHub Username
             type: 'input',
             name: 'github',
@@ -76,49 +71,4 @@ function init() {
     })
 };
 
-// const readmeFile = (answers) =>
-// `# ${answers.title}
-
-// ## Table of Contents
-
-// 1. [Description](#description)
-// 2. [Installation](#installation-instructions)
-// 3. [Usage](#usage)
-// 4. [Contributing](#contributers)
-// 5. [Tests](#test)
-    
-// ### Description
-// ${answers.description}
-
-// ### Installation Instructions
-// ${answers.installation}
-
-// ### Usage
-// ${answers.usage}
-
-// ### Contributers
-// ${answers.contribution}
-
-// ### Test
-// ${answers.test}
-
-// ### Questions
-// If you have any other questions, you can reach me:
-// - via email: ${answers.email}
-// - via GitHub: github.com/${answers.github}
-
-// ### License & Copyright
-// This project is covered under the [${answers.license}](LICENSE).
-
-// © ${answers.contribution}`;
-
-// const init = () => {
-//     questions ()
-//         .then((answers) => writeFileAsync('README.md', readmeFile(answers)))
-//         .then(() => console.log('Success! Your README file is all set.'))
-//         .catch((err) => console.error(err));
-// };
-// }
-
-// Function call to initialize app
 init();

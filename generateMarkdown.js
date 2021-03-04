@@ -6,23 +6,23 @@ let licenseSection;
 function renderLicenseBadge(license) {
     switch (license) {
         case "MIT":
-            licenseBadge = "";
+            licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensoure.org/licenses/MIT)`;
             break;
         case "GNU GPLv3":
-            licenseBadge = "";
+            licenseBadge = `[![License: GNU GPLv3](https://img.shields.io/badge/License-GPLv3-green.svg)](https://opensoure.org/licenses/gpl-3.0)`;
             break;
-        case "Babel":
-            licenseBadge = "";
+        case "Mozilla":
+            licenseBadge = `[![License: Mozilla](https://img.shields.io/badge/License-Mozilla-green.svg)](https://opensoure.org/licenses/mpl-2.0)`;
             break;
         default:
-            licenseBadge = "";
+            licenseBadge = `""`;
     }
     renderLicenseBadge(license, licenseBadge);
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
+function renderLicenseLink(license, licenseBadge) {
     switch (license) {
         case "MIT":
             licenseLink = "";
@@ -36,12 +36,12 @@ function renderLicenseLink(license) {
         default:
             licenseLink = "";
     }
-    renderLicenseLink(license, licenseLink);
+    renderLicenseLink(license, licenseBadge, licenseLink);
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseSection(license, licenseBadge, licenseLink) {
     switch (license) {
         case "MIT":
             licenseSection = "";
@@ -55,7 +55,7 @@ function renderLicenseSection(license) {
         default:
             licenseSection = "";
     }
-    renderLicenseSection(license, licenseSection);
+    renderLicenseSection(license, , licenseBadge, licenseLink, licenseSection);
 }
 
 // TODO: Create a function to generate markdown for README
@@ -95,8 +95,9 @@ function generateMarkdown(data) {
     This project is covered under the [${data.license}](LICENSE).
 
     © ${data.contribution}`;
-
-
 }
 
 module.exports = generateMarkdown;
+module.exports = renderLicenseBadge;
+module.exports = renderLicenseLink;
+module.exports = renderLicenseSection;
