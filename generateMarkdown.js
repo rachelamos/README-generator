@@ -25,13 +25,13 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license, licenseBadge) {
     switch (license) {
         case "MIT":
-            licenseLink = "";
+            licenseLink = `[MIT](https://choosealicense.com/licenses/mit)`;
             break;
         case "GNU GPLv3":
-            licenseLink = "";
+            licenseLink = `[MIT](https://choosealicense.com/licenses/gpl-3.0)`;
             break;
-        case "Babel":
-            licenseLink = "";
+        case "Mozilla":
+            licenseLink = `[MIT](https://choosealicense.com/licenses/mpl-2.0)`;
             break;
         default:
             licenseLink = "";
@@ -44,18 +44,18 @@ function renderLicenseLink(license, licenseBadge) {
 function renderLicenseSection(license, licenseBadge, licenseLink) {
     switch (license) {
         case "MIT":
-            licenseSection = "";
+            licenseSection = `${licenseBadge} ${licenseLink}`;
             break;
         case "GNU GPLv3":
-            licenseSection = "";
+            licenseSection = `${licenseBadge} ${licenseLink}`;
             break;
         case "Babel":
-            licenseSection = "";
+            licenseSection = `${licenseBadge} ${licenseLink}`;
             break;
         default:
             licenseSection = "";
     }
-    renderLicenseSection(license, , licenseBadge, licenseLink, licenseSection);
+    // renderLicenseSection(license, licenseBadge, licenseLink, licenseSection);
 }
 
 // TODO: Create a function to generate markdown for README
