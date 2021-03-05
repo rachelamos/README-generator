@@ -31,7 +31,7 @@ From the terminal, answer the prompt questions. The app will generate a professi
 
 [Link to Application](https://github.com/rachelamos/README-generator.git)
 
-[Demo of My Page](https://drive.google.com/file/d/163ykEheAxaouIHtQq82xtucj2MDa3sw2/view)
+[Demo of My App](https://drive.google.com/file/d/163ykEheAxaouIHtQq82xtucj2MDa3sw2/view)
 
 ### Questions
 If you have any other questions, you can reach me:
