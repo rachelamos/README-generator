@@ -51,7 +51,7 @@ function init() {
             type: 'checkbox',
             name: 'license',
             message: questions[6],
-            choices: ['MIT', 'GNU GPLv3', 'Mozilla'],
+            choices: ['MIT', 'Apache', 'Mozilla'],
         },
         {   // GitHub Username
             type: 'input',
