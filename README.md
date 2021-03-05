@@ -36,7 +36,7 @@ From the terminal, answer the prompt questions. The app will generate a professi
 ### Questions
 If you have any other questions, you can reach me:
 - via email: rachelamos35@gmail.com
-- via GitHub: github.com/rachelamos
+- via GitHub: https://github.com/rachelamos
 
 ### License
 This project is covered under the [MIT](LICENSE) license.
