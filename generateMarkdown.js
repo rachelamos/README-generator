@@ -49,7 +49,7 @@ ${data.test}
 ### Questions
 If you have any other questions, you can reach me:
 - via email: ${data.email}
-- via GitHub: github.com/${data.github}
+- via GitHub: https://github.com/${data.github}
 
 ### Contributers
 ${data.contribution}

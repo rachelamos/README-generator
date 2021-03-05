@@ -21,7 +21,13 @@ An app that allows a user to create a professional README.
 ### Usage
 From the terminal, answer the prompt questions. The app will generate a professional README for you.
 
-![Photo of App]()
+**Generator in Terminal**
+
+![Generator in Terminal](images/generatorInTerminal.png)
+
+**Final Product**
+
+![Final Product](images/finalProduct.png)
 
 [Link to Application](https://github.com/rachelamos/README-generator.git)
 
