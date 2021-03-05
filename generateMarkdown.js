@@ -4,41 +4,43 @@ let licenseSection;
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    switch (license) {
-        case "MIT":
-            licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensoure.org/licenses/MIT)`;
-            break;
-        case "GNU GPLv3":
-            licenseBadge = `[![License: GNU GPLv3](https://img.shields.io/badge/License-GPLv3-green.svg)](https://opensoure.org/licenses/gpl-3.0)`;
-            break;
-        case "Mozilla":
-            licenseBadge = `[![License: Mozilla](https://img.shields.io/badge/License-Mozilla-green.svg)](https://opensoure.org/licenses/mpl-2.0)`;
-            break;
-        default:
-            licenseBadge = "";
+    if (license) {
+        return `![License](https://img.shields.io/badge/License-${license}-green.svg)`;
+    } else {
+        return "";
     }
-    console.log(licenseBadge);
-    console.log(typeof (license));
+    // console.log(licenseBadge);
+    // console.log(typeof (license));
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license, licenseBadge) {
-    switch (license) {
-        case "MIT":
-            licenseLink = `[MIT](https://choosealicense.com/licenses/mit)`;
-            break;
-        case "GNU GPLv3":
-            licenseLink = `[MIT](https://choosealicense.com/licenses/gpl-3.0)`;
-            break;
-        case "Mozilla":
-            licenseLink = `[MIT](https://choosealicense.com/licenses/mpl-2.0)`;
-            break;
-        default:
-            licenseLink = "";
-    }
+function renderLicenseLink(license) {
+    if (license === "MIT") {
+        return licenseLink = `(https://choosealicense.com/licenses/mit)`;
+    } else if (license === "GNU GPLv3") {
+        return licenseLink = `(https://choosealicense.com/licenses/gpl-3.0)`;
+    } else if (license === 'Mozilla') {
+        return licenseLink = `(https://choosealicense.com/licenses/mpl-2.0)`;
+    } else {
+        return licenseLink = "";
+    };
+    console.log(data.licenseLink);
+    // switch (license) {
+    //     case "MIT":
+    //         licenseLink = `(https://choosealicense.com/licenses/mit)`;
+    //         break;
+    //     case "GNU GPLv3":
+    //         licenseLink = `(https://choosealicense.com/licenses/gpl-3.0)`;
+    //         break;
+    //     case "Mozilla":
+    //         licenseLink = `(https://choosealicense.com/licenses/mpl-2.0)`;
+    //         break;
+    //     default:
+    //         licenseLink = "";
+    // }
 }
-
+// console.log(renderLicenseLink(data.licenseLink));
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license, licenseBadge, licenseLink) {
@@ -55,46 +57,47 @@ function renderLicenseSection(license, licenseBadge, licenseLink) {
         default:
             licenseSection = "";
     }
+    // console.log(renderLicenseLink(data.licenseLink));
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-    let license = renderLicenseBadge(data.license[0]);
-    return `
-    # ${data.title}
+    // let license = renderLicenseBadge(data.license[0]);
+    return `# ${data.title}
+## Table of Contents
 
-    ## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation-instructions)
+3. [Usage](#usage)
+4. [Contributing](#contributers)
+5. [Tests](#test)
 
-    1. [Description](#description)
-    2. [Installation](#installation-instructions)
-    3. [Usage](#usage)
-    4. [Contributing](#contributers)
-    5. [Tests](#test)
-        
-    ### Description
-    ${data.description}
+${renderLicenseBadge(data.license)}
 
-    ### Installation Instructions
-    ${data.installation}
+### Description
+${data.description}
 
-    ### Usage
-    ${data.usage}
+### Installation Instructions
+${data.installation}
 
-    ### Contributers
-    ${data.contribution}
+### Usage
+${data.usage}
 
-    ### Test
-    ${data.test}
+### Contributers
+${data.contribution}
 
-    ### Questions
-    If you have any other questions, you can reach me:
-    - via email: ${data.email}
-    - via GitHub: github.com/${data.github}
+### Test
+${data.test}
 
-    ### License & Copyright
-    This project is covered under the [${license}](LICENSE).
+### Questions
+If you have any other questions, you can reach me:
+- via email: ${data.email}
+- via GitHub: github.com/${data.github}
 
-    © ${data.contribution}`;
+### License & Copyright
+This project is covered under the [${renderLicenseBadge(data.license)}](${renderLicenseLink(data.licenseLink)}).
+
+© ${data.contribution}`;
 }
 
 module.exports = generateMarkdown;

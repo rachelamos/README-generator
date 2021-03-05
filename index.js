@@ -67,8 +67,8 @@ function init() {
     .then((data) => {
         // let getBadge = markdown.renderLicenseBadge(data.license);
         // console.log(getBadge);
-        console.log(data);
-        writeToFile("README.md", markdown(data));
+        // console.log(data);
+        writeToFile("yourREADME.md", markdown(data));
     })
     
 };

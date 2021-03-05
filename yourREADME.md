@@ -1,5 +1,4 @@
 # la
-
 ## Table of Contents
 
 1. [Description](#description)
@@ -7,7 +6,9 @@
 3. [Usage](#usage)
 4. [Contributing](#contributers)
 5. [Tests](#test)
-        
+
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 ### Description
 la
 
@@ -26,9 +27,9 @@ la
 ### Questions
 If you have any other questions, you can reach me:
 - via email: la
-- via GitHub: github.com/
+- via GitHub: github.com/la
 
 ### License & Copyright
-This project is covered under the [undefined](LICENSE).
+This project is covered under the [![License](https://img.shields.io/badge/License-MIT-green.svg)]().
 
 © la
