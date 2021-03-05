@@ -5,9 +5,7 @@
 2. [Installation](#installation-instructions)
 3. [Usage](#usage)
 4. [Contributing](#contributers)
-5. [Tests](#test)
-6. [License](#license)
-
+5. [License](#license)
 
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
@@ -15,16 +13,19 @@
 An app that allows a user to create a professional README.
 
 ### Installation Instructions
-1. Download the code from the repo. 2. Within the terminal, npm i. 3. Run node index.js. 4. Input the answers to the prompts.
+1. Download the code from the repo.
+2. Within the terminal, npm i.
+3. Run node index.js.
+4. Input the answers to the prompts.
 
 ### Usage
 From the terminal, answer the prompt questions. The app will generate a professional README for you.
 
-### Contributers
-Rachel Amos
+![Photo of App]()
 
-### Test
-n/a
+[Link to Application](https://github.com/rachelamos/README-generator.git)
+
+[Demo of My Page]()
 
 ### Questions
 If you have any other questions, you can reach me:
@@ -32,7 +33,7 @@ If you have any other questions, you can reach me:
 - via GitHub: github.com/rachelamos
 
 ### License
-This project is covered under the ![MIT](LICENSE)
+This project is covered under the [MIT](LICENSE) license.
 
-### App Contributers
+### Contributers
 © Rachel Amos

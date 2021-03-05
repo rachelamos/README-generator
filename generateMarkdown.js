@@ -20,7 +20,7 @@ function renderLicenseLink(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
     return `# ${data.title}
-    
+
 ## Table of Contents
 
 1. [Description](#description)
@@ -28,6 +28,7 @@ function generateMarkdown(data) {
 3. [Usage](#usage)
 4. [Contributing](#contributers)
 5. [Tests](#test)
+6. [Copyright](#copyright)
 
 ${renderLicenseLink()}
 
@@ -42,9 +43,6 @@ ${data.installation}
 ### Usage
 ${data.usage}
 
-### Contributers
-${data.contribution}
-
 ### Test
 ${data.test}
 
@@ -53,10 +51,13 @@ If you have any other questions, you can reach me:
 - via email: ${data.email}
 - via GitHub: github.com/${data.github}
 
-### License
-This project is covered under the ${renderLicenseBadge(data.license)}
+### Contributers
+${data.contribution}
 
-### App Contributers
+### License
+This project is covered under the ${data.license} license.
+
+### Copyright
 © ${data.contribution}`;
 }
 

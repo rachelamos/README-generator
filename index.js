@@ -4,7 +4,7 @@ const fs = require('fs');
 const markdown = require("./generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
-const questions = ['What is the title of your project?', 'Write a description of your project.', 'Provide installation instructions.', 'How do you use your project?', 'Who contributed to your project?', 'Run tests here.', 'Choose a license for your project', 'Enter your GitHub Username', 'Enter your email address.'];
+const questions = ['What is the title of your project?', 'Write a description of your project.', 'Provide installation instructions.', 'How do you use your project?', 'Write the full names of the contributers to this project.', 'Run tests here.', 'Choose a license for your project', 'Enter your GitHub Username', 'Enter your email address.'];
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
@@ -63,9 +63,6 @@ function init() {
         },
     ])
     .then((data) => {
-        // let getBadge = markdown.renderLicenseBadge(data.license);
-        // console.log(getBadge);
-        // console.log(data);
         writeToFile("yourREADME.md", markdown(data));
     })
     
