@@ -2,8 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const markdown = require("./generateMarkdown.js");
-const path = require('path');
-// const util = require('util');
 
 // TODO: Create an array of questions for user input
 const questions = ['What is the title of your project?', 'Write a description of your project.', 'Provide installation instructions.', 'How do you use your project?', 'Who contributed to your project?', 'Run tests here.', 'Choose a license for your project', 'Enter your GitHub Username', 'Enter your email address.'];
