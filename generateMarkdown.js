@@ -15,9 +15,10 @@ function renderLicenseBadge(license) {
             licenseBadge = `[![License: Mozilla](https://img.shields.io/badge/License-Mozilla-green.svg)](https://opensoure.org/licenses/mpl-2.0)`;
             break;
         default:
-            licenseBadge = `""`;
+            licenseBadge = "";
     }
-    renderLicenseBadge(license, licenseBadge);
+    console.log(licenseBadge);
+    console.log(typeof (license));
 }
 
 // TODO: Create a function that returns the license link
@@ -36,7 +37,6 @@ function renderLicenseLink(license, licenseBadge) {
         default:
             licenseLink = "";
     }
-    renderLicenseLink(license, licenseBadge, licenseLink);
 }
 
 // TODO: Create a function that returns the license section of README
@@ -55,11 +55,11 @@ function renderLicenseSection(license, licenseBadge, licenseLink) {
         default:
             licenseSection = "";
     }
-    // renderLicenseSection(license, licenseBadge, licenseLink, licenseSection);
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+    let license = renderLicenseBadge(data.license[0]);
     return `
     # ${data.title}
 
@@ -92,12 +92,9 @@ function generateMarkdown(data) {
     - via GitHub: github.com/${data.github}
 
     ### License & Copyright
-    This project is covered under the [${data.license}](LICENSE).
+    This project is covered under the [${license}](LICENSE).
 
     © ${data.contribution}`;
 }
 
 module.exports = generateMarkdown;
-module.exports = renderLicenseBadge;
-module.exports = renderLicenseLink;
-module.exports = renderLicenseSection;
